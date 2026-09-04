@@ -1,0 +1,41 @@
+.hero { min-width: 0; max-width: 100%; padding: clamp(10rem, 18vh, 14rem) var(--pad) clamp(5rem, 8vw, 8rem); }
+.hero > .eyebrow { display: block; margin-bottom: clamp(3rem, 7vw, 7rem); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); align-items: end; gap: clamp(3rem, 9vw, 10rem); }
+.hero h1 { max-width: 950px; margin: 0; font-size: clamp(3.8rem, 6vw, 7rem); line-height: .86; letter-spacing: -.09em; }
+.credential { max-width: 520px; margin: 1.15rem 0 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.intro { max-width: 510px; margin: clamp(2.5rem, 5vw, 5rem) 0 0; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.32; letter-spacing: -.035em; }
+.brandVisual { position: relative; display: grid; min-height: clamp(260px, 32vw, 460px); padding: clamp(1.5rem, 3vw, 2.75rem); overflow: hidden; background: var(--accent-soft); border: 1px solid var(--line); }
+.brandVisual::before { content: ""; position: absolute; inset: clamp(1rem, 2vw, 2rem); border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+.brandVisual::after { content: "RC"; position: absolute; right: clamp(1rem, 2vw, 2rem); top: clamp(.75rem, 1.4vw, 1.5rem); color: color-mix(in srgb, var(--accent) 60%, transparent); font-family: Georgia, serif; font-size: clamp(2rem, 4vw, 4rem); font-style: italic; line-height: 1; }
+.brandMark { position: relative; z-index: 1; width: clamp(5.5rem, 11vw, 10rem); height: auto; align-self: center; justify-self: center; }
+.brandCopy { position: relative; z-index: 1; display: grid; align-self: end; gap: .35rem; color: var(--ink); }
+.brandCopy span { font-size: clamp(1.5rem, 2.6vw, 2.7rem); font-weight: 700; letter-spacing: -.07em; }
+.brandCopy strong { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; }
+.brandCopy small { font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.perspective { min-width: 0; max-width: 100%; padding: clamp(5rem, 8vw, 8.5rem) var(--pad); background: var(--accent-soft); }
+.perspectiveGrid, .collaborationGrid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: clamp(3rem, 10vw, 12rem); margin-top: clamp(2.5rem, 5vw, 5rem); }
+.perspective h2, .collaboration h2 { max-width: 800px; margin: 0; font-size: clamp(2.8rem, 4.8vw, 5.5rem); line-height: .88; letter-spacing: -.08em; }
+.perspectiveGrid > div, .collaborationGrid > div { max-width: 470px; }
+.perspectiveGrid > div p, .collaborationGrid p { margin: 0 0 1.25rem; max-width: 470px; font-size: clamp(1.05rem, 1.45vw, 1.3rem); line-height: 1.42; color: var(--muted); }
+.perspectiveGrid > p, .collaborationGrid p { margin: 0; max-width: 470px; font-size: clamp(1.05rem, 1.45vw, 1.3rem); line-height: 1.42; color: var(--muted); }
+.sensibilities { min-width: 0; max-width: 100%; padding: clamp(5rem, 8vw, 8.5rem) var(--pad); }
+.sensibilities ul { padding: 0; margin: clamp(2.5rem, 5vw, 5rem) 0 0; list-style: none; border-top: 1px solid var(--ink); }
+.sensibilities li { display: grid; grid-template-columns: 18% 1fr; gap: 1rem; padding: 24px 0; border-bottom: 1px solid var(--line); } .sensibilities li div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(220px, .55fr); gap: 2rem; align-items: baseline; } .sensibilities li strong { font-size: clamp(2rem, 3.5vw, 4rem); line-height: .9; font-weight: 700; letter-spacing: -.07em; } .sensibilities li p { margin: 0; font-size: 14px; line-height: 1.4; color: var(--muted); }
+.sensibilities li span { padding-top: .25em; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: var(--muted); }
+.collaboration { min-width: 0; max-width: 100%; padding: clamp(5rem, 8vw, 8.5rem) var(--pad); background: var(--accent); color: var(--bg); }
+.collaborationGrid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 2.5rem; }
+.collaborationGrid p { color: color-mix(in srgb, var(--bg) 82%, transparent); }
+.collaboration :global(.magnetic-button) { background: var(--accent-soft); color: var(--ink); }
+
+@media (max-width: 860px) {
+  .hero { padding-top: 145px; padding-bottom: 90px; }
+  .hero > .eyebrow { margin-bottom: 2.5rem; }
+  .heroGrid, .perspectiveGrid, .collaborationGrid { display: block; }
+  .hero h1 { font-size: clamp(3.55rem, 14vw, 5rem); line-height: .87; }
+  .intro { font-size: 17px; }
+  .brandVisual { min-height: 300px; margin-top: 3.5rem; }
+  .perspective, .sensibilities, .collaboration { padding-top: 90px; padding-bottom: 90px; }
+  .perspective h2, .collaboration h2 { font-size: clamp(3rem, 12vw, 4.5rem); }
+  .perspectiveGrid > div, .collaborationGrid > div { margin-top: 2rem; } .perspectiveGrid > div p, .collaborationGrid p { font-size: 17px; }
+  .sensibilities li { grid-template-columns: 42px 1fr; } .sensibilities li div { display: block; } .sensibilities li strong { font-size: clamp(2.3rem, 10vw, 3.8rem); } .sensibilities li p { margin-top: .8rem; font-size: 15px; }
+}

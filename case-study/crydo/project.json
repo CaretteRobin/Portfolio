@@ -1,0 +1,27 @@
+{
+  "name": "Crydo",
+  "slug": "crydo",
+  "tagline": "Market Observatory",
+  "year": 2026,
+  "status": "Shipped",
+  "liveUrl": "https://www.crydo.fr",
+  "repository": null,
+  "role": ["Product design", "Visual direction", "Frontend engineering", "WebGL rendering", "Data integration", "Production deployment"],
+  "stack": ["Next.js 16.3.1", "React 19.2.8", "TypeScript 5", "Three.js 0.185.1", "WebGL", "GLSL", "CSS", "Vitest 4.1.11", "CoinGecko API", "Vercel"],
+  "assets": ["BTC", "ETH", "SOL"],
+  "currencies": ["EUR", "USD", "GBP"],
+  "provider": { "name": "CoinGecko", "attribution": "Powered by CoinGecko" },
+  "screenshots": [
+    "images/final/crydo-observatory-desktop.png",
+    "images/final/crydo-btc.png",
+    "images/final/crydo-eth.png",
+    "images/final/crydo-sol.png",
+    "images/final/crydo-analysis-desktop-courbe.png",
+    "images/final/crydo-observatory-mobile.png",
+    "images/final/crydo-analysis-mobile.png"
+  ],
+  "socialImage": "images/final/crydo-observatory-desktop.png",
+  "brandMark": "images/crydo-mark.svg",
+  "testing": { "testFiles": 13, "tests": 86, "commands": ["npm run lint", "npm run typecheck", "npm test", "npm run build"] },
+  "sourceNotes": ["Repository facts verified against ~/dev/crydo current source", "Visual captures generated from production site https://www.crydo.fr", "No unsupported business or performance metrics included"]
+}

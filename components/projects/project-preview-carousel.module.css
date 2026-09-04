@@ -1,0 +1,8 @@
+.frame { overflow: hidden; }
+.track { height: 200%; display: flex; flex-direction: column; transition: transform .38s var(--ease); will-change: transform; }
+.slide { height: 50%; flex: 0 0 50%; overflow: hidden; }
+.slide :global(.project-visual) { height: 100%; aspect-ratio: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  .track { transition-duration: .01ms; }
+}

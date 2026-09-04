@@ -1,0 +1,22 @@
+.page { min-width: 0; max-width: 100%; padding: clamp(10rem, 19vh, 14rem) var(--pad) clamp(6rem, 11vw, 11rem); display: grid; grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr); gap: clamp(3rem, 8vw, 10rem); align-items: start; }
+.intro > p:not(.eyebrow) { max-width: 28rem; margin: 0; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.45; }
+.intro h1 { font-size: clamp(3.6rem, 5.8vw, 6.5rem); line-height: .84; letter-spacing: -.09em; margin: clamp(2rem, 5vw, 5rem) 0; }
+.intro h1 i { font-family: Georgia, serif; font-weight: 400; }
+.details { margin-top: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--ink); padding-top: 1rem; }
+.details dl { margin: 1.5rem 0 0; }
+.details dl div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.details dt { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.details dd { margin: 0; }
+.details dd span { color: var(--muted); }
+.panel { min-width: 0; border-top: 1px solid var(--ink); padding-top: 1rem; }
+.privacy { max-width: 31rem; margin: 1.5rem 0 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+.privacy a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+
+@media (max-width: 860px) {
+  .page { display: block; padding-top: 145px; }
+  .intro h1 { font-size: clamp(3.55rem, 14vw, 5rem); line-height: .87; }
+  .intro > p:not(.eyebrow) { font-size: 17px; }
+  .details { margin-top: 3rem; }
+  .details dl div { grid-template-columns: 5.5rem 1fr; }
+  .panel { margin-top: 4rem; }
+}
