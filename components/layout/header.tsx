@@ -38,7 +38,31 @@ export function Header() {
     return () => { window.removeEventListener("scroll", onScroll); if (frameRef.current) cancelAnimationFrame(frameRef.current); };
   }, [pathname]);
 
-  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
+  useEffect(() => {
+    if (!open) return;
+
+    const body = document.body;
+    const scrollY = window.scrollY;
+    const previousStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+
+    body.style.position = "fixed";
+    body.style.top = "-" + scrollY + "px";
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+
+    return () => {
+      body.style.position = previousStyles.position;
+      body.style.top = previousStyles.top;
+      body.style.width = previousStyles.width;
+      body.style.overflow = previousStyles.overflow;
+      window.scrollTo(0, scrollY);
+    };
+  }, [open]);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -48,7 +72,7 @@ export function Header() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
-  return <header ref={headerRef} className={`header ${scrolled ? "header-scrolled" : ""}`}>
+  return <header ref={headerRef} className={`header ${scrolled ? "header-scrolled" : ""} ${open ? "menu-open" : ""}`}>
     <Link href="/" className="brand" aria-label="Robin Carette — Accueil">
       <Image className="brand-mark" src="/brand/logo.svg" alt="" aria-hidden="true" width={27} height={28} />
       <span className="brand-name-clip"><span className="brand-name">Robin Carette</span></span>
